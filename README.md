@@ -18,3 +18,5 @@ A simple Income Tax Calculator built using HTML and JavaScript.
 ## Project Demo
 Enter your annual income and click **Calculate Tax** to see the total tax amount.# incometaxcal git init git add README.md git add index.html git add script.js git commit -m first commit git branch -M main git remote add origin https://github.com/bt24cs030-svg/incometaxcal.git git push -u origin main
 # incometaxcal
+# incometaxcal
+# countdowntimer

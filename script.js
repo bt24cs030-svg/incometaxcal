@@ -1,23 +1,15 @@
 const parent = document.getElementById("parent");
+const timer = document.getElementById("timer");
 
-parent.addEventListener("submit", (event)=> {
-    event.preventDefault();
-    const income = document.getElementById("income").value;
-    const tax = calculateTax(income);
-    document.getElementById("total-tax").textContent = `Total Tax:  Rs. ${tax.toFixed(2)}`;
-});
 
-function calculateTax(income) {
-    let tax = 0;
-    if (income <= 120000) {
-        return  0;
-    } else  if( income<=160000){
-        return (income - 120000) * 0.15;
-    }  else  if( income<=200000){
-        return (income - 160000) * 0.20+60000;
-    } else  if( income<=240000){
-        return (income - 200000) * 0.25+60000+80000;
-    }else{
-        return (income - 240000) * 0.30+60000+80000+100000;
-    }
-}
+setInterval(() => {  
+     const currentDate = new Date().getTime();
+const targetDate = new Date(2027,7,18).getTime();
+const timeDifference = targetDate - currentDate;
+const Days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+const Hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+const Minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+const Seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+timer.textContent =`Remaining time: ${Days} :days ${Hours} :hours ${Minutes} :minutes ${Seconds} :seconds`;
+},1000);
